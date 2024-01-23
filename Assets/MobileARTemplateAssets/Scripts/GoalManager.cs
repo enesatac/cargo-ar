@@ -158,6 +158,32 @@ public class GoalManager : MonoBehaviour
         set => m_CreateButton = value;
     }
 
+    [Tooltip("The Barcode Button")]
+    [SerializeField]
+    GameObject m_BarcodeButton;
+
+    /// <summary>
+    /// The Barcode Button
+    /// </summary>
+    public GameObject barcodeButton
+    {
+        get => m_BarcodeButton;
+        set => m_BarcodeButton = value;
+    }
+
+    [Tooltip("The Info Text")]
+    [SerializeField]
+    GameObject m_InfoText;
+
+    /// <summary>
+    /// The Info Text
+    /// </summary>
+    public GameObject infoText
+    {
+        get => m_InfoText;
+        set => m_InfoText = value;
+    }
+
     [Tooltip("The AR Template Menu Manager object to enable once the greeting prompt is dismissed.")]
     [SerializeField]
     ARTemplateMenuManager m_MenuManager;
@@ -307,6 +333,8 @@ public class GoalManager : MonoBehaviour
         m_GreetingPrompt.SetActive(false);
         m_OptionsButton.SetActive(true);
         m_CreateButton.SetActive(true);
+        m_BarcodeButton.SetActive(true);
+        m_InfoText.SetActive(true);
         m_MenuManager.enabled = true;
 
         for (int i = startingStep; i < m_StepList.Count; i++)
